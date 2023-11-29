@@ -22,17 +22,17 @@ public class UserController {
         if (id == 0) {
             List<User> user = userService.getAllUsers();
             model.addAttribute("users", user);
-            return "index";
+            return "/index.html";
         } else {
             model.addAttribute("user", userService.getById(id));
-            return "userview";
+            return "/userview.html";
         }
     }
 
     @GetMapping(value = "/users/add")
     public String addUser(ModelMap model) {
         model.addAttribute("user", new User());
-        return "adduser";
+        return "/adduser.html";
     }
 
     @PostMapping(value = "/users/add")

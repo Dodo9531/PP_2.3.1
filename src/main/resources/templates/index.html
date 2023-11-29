@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -14,9 +14,9 @@
         <th>Series</th>
     </tr>
     <tr th:each ="user : ${users}">
-        <td> <a th:color="black" th:href ="@{/users(id=${user.id})}" th:utext="${user.id}"></a> </td>
-        <td> <a th:color="black" th:href ="@{/users(id=${user.id})}" th:utext="${user.name}"></a> </td>
-        <td> <a th:color="black" th:href ="@{/users(id=${user.id})}" th:utext="${user.surname}"></a> </td>
+        <td> <a th:color="black" th:href ="@{/users(id=${user?.id})}" th:utext="${user?.id}"></a> </td>
+        <td> <a th:color="black" th:href ="@{/users(id=${user?.id})}" th:utext="${user?.name}"></a> </td>
+        <td> <a th:color="black" th:href ="@{/users(id=${user?.id})}" th:utext="${user?.surname}"></a> </td>
     </tr>
 </table>
 <form th:method="GET" th:action="@{/users/add}">
